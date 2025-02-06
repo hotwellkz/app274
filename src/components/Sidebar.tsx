@@ -188,6 +188,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ onPageChange, currentPage }) =
                 </button>
               )}
               <button
+                onClick={() => navigate('/profile')}
+                className="flex items-center gap-2 text-sm text-gray-600 hover:text-emerald-600 px-4 py-2 hover:bg-white rounded-lg transition-all duration-200 group"
+              >
+                <User className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
+                <span>Сменить пароль</span>
+              </button>
+              <button
                 onClick={() => auth.signOut()}
                 className="flex items-center gap-2 text-sm text-red-600 hover:text-red-700 px-4 py-2 hover:bg-red-50 rounded-lg transition-all duration-200 group"
               >
