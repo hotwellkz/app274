@@ -14,7 +14,7 @@ export const StickyNavigation: React.FC<StickyNavigationProps> = ({ onNavigate }
       {isAdmin && (
         <button
           onClick={() => onNavigate('feed')}
-          className="p-3 bg-white/80 backdrop-blur-sm text-gray-600 hover:text-gray-900 rounded-full hover:bg-white/90 shadow-lg"
+          className="p-3 text-gray-700 hover:text-gray-900 rounded-full transition-colors duration-200"
           title="Лента"
         >
           <ScrollText className="w-5 h-5" />
@@ -22,28 +22,28 @@ export const StickyNavigation: React.FC<StickyNavigationProps> = ({ onNavigate }
       )}
       <button
         onClick={() => onNavigate('clients')}
-        className="p-3 bg-white/80 backdrop-blur-sm text-gray-600 hover:text-gray-900 rounded-full hover:bg-white/90 shadow-lg"
+        className="p-3 text-gray-700 hover:text-gray-900 rounded-full transition-colors duration-200"
         title="Клиенты"
       >
         <Users className="w-5 h-5" />
       </button>
       <button
         onClick={() => onNavigate('warehouse')}
-        className="p-3 bg-white/80 backdrop-blur-sm text-gray-600 hover:text-gray-900 rounded-full hover:bg-white/90 shadow-lg"
+        className="p-3 text-gray-700 hover:text-gray-900 rounded-full transition-colors duration-200"
         title="Склад"
       >
         <Warehouse className="w-5 h-5" />
       </button>
       <button
         onClick={() => onNavigate('transactions')}
-        className="p-3 bg-white/80 backdrop-blur-sm text-gray-600 hover:text-gray-900 rounded-full hover:bg-white/90 shadow-lg"
+        className="p-3 text-gray-700 hover:text-gray-900 rounded-full transition-colors duration-200"
         title="Транзакции"
       >
         <ArrowLeftRight className="w-5 h-5" />
       </button>
       <button
         onClick={() => onNavigate('whatsapp')}
-        className="p-3 bg-white/80 backdrop-blur-sm text-gray-600 hover:text-gray-900 rounded-full hover:bg-white/90 shadow-lg"
+        className="p-3 text-gray-700 hover:text-gray-900 rounded-full transition-colors duration-200"
         title="WhatsApp"
       >
         <MessageSquare className="w-5 h-5" />
