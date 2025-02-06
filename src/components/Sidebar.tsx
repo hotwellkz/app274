@@ -171,7 +171,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ onPageChange, currentPage }) =
             <div className="flex flex-col space-y-3">
               {isAdmin && (
                 <button
-                  onClick={() => navigate('/admin')}
+                  onClick={() => {
+                    navigate('/admin');
+                    setIsMobileMenuOpen(false);
+                  }}
                   className={`w-full flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 group relative ${
                     location.pathname === '/admin'
                       ? 'text-emerald-600 bg-emerald-50 shadow-sm'
@@ -188,7 +191,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ onPageChange, currentPage }) =
                 </button>
               )}
               <button
-                onClick={() => navigate('/profile')}
+                onClick={() => {
+                  navigate('/profile');
+                  setIsMobileMenuOpen(false);
+                }}
                 className="flex items-center gap-2 text-sm text-gray-600 hover:text-emerald-600 px-4 py-2 hover:bg-white rounded-lg transition-all duration-200 group"
               >
                 <User className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
