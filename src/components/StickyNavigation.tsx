@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollText, Warehouse, ArrowLeftRight, MessageSquare } from 'lucide-react';
+import { ScrollText, Warehouse, ArrowLeftRight, MessageSquare, Users } from 'lucide-react';
 import { useIsAdmin } from '../hooks/useIsAdmin';
 
 interface StickyNavigationProps {
@@ -20,6 +20,13 @@ export const StickyNavigation: React.FC<StickyNavigationProps> = ({ onNavigate }
           <ScrollText className="w-5 h-5" />
         </button>
       )}
+      <button
+        onClick={() => onNavigate('clients')}
+        className="p-3 bg-white/80 backdrop-blur-sm text-gray-600 hover:text-gray-900 rounded-full hover:bg-white/90 shadow-lg"
+        title="Клиенты"
+      >
+        <Users className="w-5 h-5" />
+      </button>
       <button
         onClick={() => onNavigate('warehouse')}
         className="p-3 bg-white/80 backdrop-blur-sm text-gray-600 hover:text-gray-900 rounded-full hover:bg-white/90 shadow-lg"
