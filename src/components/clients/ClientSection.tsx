@@ -9,7 +9,7 @@ interface ClientSectionProps {
   clients: Client[];
   onContextMenu: (e: React.MouseEvent, client: Client) => void;
   onClientClick: (client: Client) => void;
-  onToggleVisibility: (client: Client) => void;
+  onToggleVisibility: (client: Client) => Promise<void>;
   onViewHistory: (client: Client) => void;
   onViewProjectHistory: (client: Client) => void;
   type: 'building' | 'deposit' | 'built';

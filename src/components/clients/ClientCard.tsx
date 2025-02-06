@@ -11,7 +11,7 @@ interface ClientCardProps {
   client: Client;
   onContextMenu: (e: React.MouseEvent, client: Client) => void;
   onClientClick: (client: Client) => void;
-  onToggleVisibility: (client: Client) => void;
+  onToggleVisibility: (client: Client) => Promise<void>;
   onViewHistory: (client: Client) => void;
   onViewProjectHistory: (client: Client) => void;
   type: 'building' | 'deposit' | 'built';
@@ -74,10 +74,10 @@ export const ClientCard: React.FC<ClientCardProps> = ({
     onViewHistory(client);
   };
 
-  const handleVisibilityClick = (e: React.MouseEvent) => {
+  const handleVisibilityClick = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    onToggleVisibility(client);
+    await onToggleVisibility(client);
   };
 
   return (

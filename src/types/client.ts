@@ -17,6 +17,7 @@ export interface Client {
   createdAt?: any;
   updatedAt?: any;
   files?: Array<ClientFile>;
+  isIconsVisible: boolean;
   // Optional fields
   lastName?: string;
   phone?: string;
@@ -44,6 +45,7 @@ export const initialClientState: NewClient = {
   objectName: '',
   year: new Date().getFullYear(),
   status: 'deposit',
+  isIconsVisible: true,
   // Optional fields initialized as empty
   lastName: '',
   phone: '',

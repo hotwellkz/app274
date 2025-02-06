@@ -40,11 +40,14 @@ export const subscribeToClients = (
     return onSnapshot(
       q,
       (snapshot) => {
-        const clients = snapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data(),
-          isIconsVisible: true // По умолчанию иконки видимы
-        })) as Client[];
+        const clients = snapshot.docs.map(doc => {
+          const data = doc.data();
+          return {
+            id: doc.id,
+            ...data,
+            isIconsVisible: typeof data.isIconsVisible === 'boolean' ? data.isIconsVisible : true
+          };
+        }) as Client[];
         onUpdate(clients);
       },
       (error) => {
@@ -79,11 +82,14 @@ export const getClients = async (filters?: {
     const q = query(collection(db, 'clients'), ...constraints);
     const snapshot = await getDocs(q);
     
-    return snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data(),
-      isIconsVisible: true
-    })) as Client[];
+    return snapshot.docs.map(doc => {
+      const data = doc.data();
+      return {
+        id: doc.id,
+        ...data,
+        isIconsVisible: typeof data.isIconsVisible === 'boolean' ? data.isIconsVisible : true
+      };
+    }) as Client[];
   } catch (error) {
     console.error('Error fetching clients:', error);
     throw error;
